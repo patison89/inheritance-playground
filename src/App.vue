@@ -1,17 +1,22 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
+    <Header></Header>
+    <b-container>
+      <LawPage></LawPage>
+    </b-container>
+
   </div>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import HelloWorld from "./components/HelloWorld.vue";
+import Header from "./components/Header.vue";
+import LawPage from "./components/law-page/LawPage.vue";
 
 @Component({
   components: {
-    HelloWorld
+    Header,
+    LawPage
   }
 })
 export default class App extends Vue {}
@@ -24,6 +29,5 @@ export default class App extends Vue {}
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 </style>
