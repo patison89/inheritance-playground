@@ -1,5 +1,5 @@
-# inheritance-playground
-
+# Laws of Inheritance Playground
+This project was created to help learn laws of inheritance in interactive and visual way.
 ## Project setup
 ```
 npm install
