@@ -29,13 +29,10 @@
 
 <script lang="ts">
   import { Component, Vue } from "vue-property-decorator";
-  import ModelMixin from "../mixins/mixins";
   import { InheritanceModel } from "../models/inheritance-model.model";
   import { mutations, store } from "../store/store";
 
-  @Component({
-  mixins: [ModelMixin]
-})
+  @Component
 export default class Header extends Vue {
 
   get selectedModelId() {
