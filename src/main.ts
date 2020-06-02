@@ -13,7 +13,7 @@ Vue.use(BootstrapVue);
 library.add(faDna);
 Vue.component('font-awesome-icon', FontAwesomeIcon);
 Vue.use(EventBus);
-var bus = new EventBus.Bus();
+const bus = new EventBus.Bus();
 Vue.config.productionTip = false;
 
 new Vue({
