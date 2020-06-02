@@ -37,8 +37,17 @@
     selectedModelId = 1;
     models: InheritanceModel[] = models;
 
+    created() {
+      this.selectModel();
+    }
+
     onModelSelect() {
-      console.log(this.selectedModelId)
+      this.selectModel();
+    }
+
+    selectModel() {
+      const selectedModel = models.find((model: InheritanceModel) => model.id === this.selectedModelId);
+      this.$bus.$emit('modelSelected', selectedModel);
     }
 
 
