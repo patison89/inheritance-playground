@@ -25,7 +25,7 @@
   @Prop() readonly P2gametes!: string[];
 
   getGamete(g1: string, g2: string) {
-    const isUpperCase = (string) => /^[A-Z]*$/.test(string);
+    const isUpperCase = (string: string) => /^[A-Z]*$/.test(string);
     return g1.split("").map((char, i) => isUpperCase(char) ? char + g2.split("")[i] : g2.split("")[i] + char).join("")
   }
   }

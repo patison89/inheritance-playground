@@ -12,8 +12,6 @@ export const store = Vue.observable({
 export const mutations = {
   setModel(model: InheritanceModel) {
     store.selectedModel = model;
-    store.selectedP1Id = 1;
-    store.selectedP2Id = 1;
   },
   setP1Id(id: number) {
     store.selectedP1Id = id;
