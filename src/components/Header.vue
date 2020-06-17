@@ -45,7 +45,9 @@ export default class Header extends Vue {
   onModelSelect(id: number) {
     const selectedModel = this.allModels.find(
       (model: InheritanceModel) => model.id === id);
-    mutations.setModel(selectedModel)
+    if (selectedModel) {
+      mutations.setModel(selectedModel)
+    }
   }
 
 }

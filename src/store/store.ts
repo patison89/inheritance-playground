@@ -4,11 +4,21 @@ import data from "../data/data"
 
 export const store = Vue.observable({
   allModels: data.models,
-  selectedModel: data.models[0]
+  selectedModel: data.models[0],
+  selectedP1Id: 1,
+  selectedP2Id: 1
 });
 
 export const mutations = {
   setModel(model: InheritanceModel) {
     store.selectedModel = model;
+    store.selectedP1Id = 1;
+    store.selectedP2Id = 1;
+  },
+  setP1Id(id: number) {
+    store.selectedP1Id = id;
+  },
+  setP2Id(id: number) {
+    store.selectedP2Id = id;
   }
 };
