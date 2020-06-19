@@ -2,25 +2,25 @@
   <div>
     <b-navbar toggleable="lg" type="dark" variant="info">
       <b-navbar-brand href="#">
-        <font-awesome-icon icon="dna" class="mr-2"/>
+        <font-awesome-icon icon="dna" class="mr-2" />
         Laws of Inheritance Playground
       </b-navbar-brand>
 
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
       <b-collapse id="nav-collapse" is-nav>
-
         <!-- Right aligned nav items -->
         <b-navbar-nav class="ml-auto">
           <b-nav-form>
-            <b-form-select v-model="selectedModelId"
-                           :options="models"
-                           value-field="id"
-                           text-field="title"
-                           @change="onModelSelect()">
+            <b-form-select
+              :value="selectedModelId"
+              :options="allModels"
+              value-field="id"
+              text-field="title"
+              @change="onModelSelect($event)"
+            >
             </b-form-select>
           </b-nav-form>
-
         </b-navbar-nav>
       </b-collapse>
     </b-navbar>
@@ -29,32 +29,28 @@
 
 <script lang="ts">
   import { Component, Vue } from "vue-property-decorator";
-  import models from "../data/inheritance-models.json";
   import { InheritanceModel } from "../models/inheritance-model.model";
+  import { mutations, store } from "../store/store";
 
   @Component
-  export default class Header extends Vue {
-    selectedModelId = 1;
-    models: InheritanceModel[] = models;
+export default class Header extends Vue {
 
-    created() {
-      this.selectModel();
-    }
-
-    onModelSelect() {
-      this.selectModel();
-    }
-
-    selectModel() {
-      const selectedModel = models.find((model: InheritanceModel) => model.id === this.selectedModelId);
-      this.$bus.$emit('modelSelected', selectedModel);
-    }
-
-
-
+  get selectedModelId() {
+    return store.selectedModel.id;
   }
+
+  get allModels() {
+    return store.allModels;
+  }
+  onModelSelect(id: number) {
+    const selectedModel = this.allModels.find(
+      (model: InheritanceModel) => model.id === id);
+    if (selectedModel) {
+      mutations.setModel(selectedModel)
+    }
+  }
+
+}
 </script>
 
-<style lang="scss">
-
-</style>
+<style lang="scss"></style>
