@@ -8,28 +8,28 @@ export default {
       alleles: [
         {
           name: "A",
-          description: "purple blossom"
+          description: "gray coat"
         },
         {
           name: "a",
-          description: "white blossom"
+          description: "yellow coat"
         }
       ],
       genotypes: [
         {
           id: 1,
           name: 'AA',
-          imageUrl: ''
+          imageUrl: 'gray-dog.png'
         },
         {
           id: 2,
           name: 'Aa',
-          imageUrl: ''
+          imageUrl: 'gray-dog.png'
         },
         {
           id: 3,
           name: 'aa',
-          imageUrl: ''
+          imageUrl: 'yellow-dog.png'
         },
 
       ]
@@ -61,47 +61,47 @@ export default {
         {
           id: 1,
           name: 'AABB',
-          imageUrl: ''
+          imageUrl: 'yellow-round.png'
         },
         {
           id: 2,
           name: 'AaBB',
-          imageUrl: ''
+          imageUrl: 'yellow-round.png'
         },
         {
           id: 3,
           name: 'aaBB',
-          imageUrl: ''
+          imageUrl: 'green-round.png'
         },
         {
           id: 4,
           name: 'AABb',
-          imageUrl: ''
+          imageUrl: 'yellow-round.png'
         },
         {
           id: 5,
           name: 'AaBb',
-          imageUrl: ''
+          imageUrl: 'yellow-round.png'
         },
         {
           id: 6,
           name: 'aaBb',
-          imageUrl: ''
+          imageUrl: 'green-round.png'
         },
         {
           id: 7,
           name: 'AAbb',
-          imageUrl: ''
+          imageUrl: 'yellow-wrinkled.png'
         },
         {
           id: 8,
           name: 'Aabb',
-          imageUrl: ''
+          imageUrl: 'yellow-wrinkled.png'
         },
         {
           id: 9,
           name: 'aabb',
-          imageUrl: ''
+          imageUrl: 'green-wrinkled.png'
         },
 
       ]
